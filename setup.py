@@ -14,11 +14,11 @@ setup(
     long_description=open('README.md').read(),
     
     install_requires=[
-        "pyftpdlib >= 1.3.0mod",
+        "pyftpdlib >= 1.3.0",
         "argparse >= 1.2.1"
     ],
     
     dependency_links = [
-        "https://github.com/scvnc/pyftpdlib-mod/tarball/49a576c#egg=pyftpdlib-1.3.0mod"
+        "https://github.com/scvnc/pyftpdlib-mod/tarball/49a576c#egg=pyftpdlib-1.3.0"
     ]
 )
