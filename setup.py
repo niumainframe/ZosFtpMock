@@ -5,11 +5,12 @@ setup(
     version='0.1.1',
     author='Vincent Schramer',
     author_email='vinciple@gmail.com',
-    
+    url='https://github.com/niumainframe/ZosFtpMock',
+
     packages=['ZosFtpMock'],
     scripts=['bin/zosftpd.py'],
     
-    description='An FTP server that roughly mocks the Marist FTP server.',
+    description='Roughly simulates how the FTP server on the zOS mainframe behaves for job submissions.
     
     long_description=open('README.md').read(),
     
