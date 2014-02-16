@@ -28,7 +28,8 @@ pip install $PWD
 
 # Try running
 zosftpd.py &
-sleep 2
+sleep 5
+exit
 
 
 

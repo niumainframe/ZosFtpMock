@@ -9,6 +9,6 @@ $(DIST):
 test:
 	bash test.sh
 
-
 clean:
 	rm -rf dist *.egg-info
+	find -name *.pyc -exec rm {} \;
