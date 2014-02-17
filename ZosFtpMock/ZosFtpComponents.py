@@ -124,6 +124,9 @@ class ZosFtpServer(object):
     ip = ''
     port = '2121'
     
+    def __init__(self):
+        self._configure_users()
+    
     @property
     def authorizer(self):
         return self._authorizer
@@ -145,7 +148,7 @@ class ZosFtpServer(object):
     
     def _configure_users(self):
         self.authorizer = DummyAuthorizer()
-        self.authorizer.add_user('KC12345', 'webjcl', '.', perm='elradfmwM')
+        self.authorize_user('KC12345', 'webjcl')
         
     def _configure_handler(self):
         self.handler = ZosFTPHandler
@@ -153,10 +156,11 @@ class ZosFtpServer(object):
     def _configure_server(self):
         address = (self.ip, self.port)
         self.server = FTPServer(address, self.handler)
-
-    def start(self):
         
-        self._configure_users()
+    def authorize_user(self, name, pw):
+        self.authorizer.add_user(name, pw, '.', perm='elradfmwM')
+        
+    def start(self):
         self._configure_handler()
         self._configure_server()
         

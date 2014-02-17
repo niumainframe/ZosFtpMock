@@ -21,6 +21,9 @@ parser.add_argument("-p", "--port", default=2121)
 parser.add_argument("-H", "--hang", action="store_true", default=False,
                     help="Cause the job to take a long time"
 )
+parser.add_argument("-C", "--credentials", default=None,
+                    help="Provide authorized credentials in the " +
+                          "following format username:password")
 
 args = parser.parse_args()
 
@@ -29,6 +32,12 @@ args = parser.parse_args()
 # Start server with config.
 
 server = ZosFtpServer()
+
+if args.credentials != None:
+    credentials = args.credentials.split(':')
+    server.authorize_user(credentials[0], credentials[1])
+
 server.port = args.port
+
 server.start()
 
