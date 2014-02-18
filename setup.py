@@ -18,7 +18,7 @@ setup(
     
     install_requires=[
         "pyftpdlib == 1.3.0-scvncfork",
-        "argparse >= 1.2.1"
+        "argparse >= 1.1"
     ],
     
     dependency_links = [
